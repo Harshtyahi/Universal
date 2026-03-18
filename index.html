@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Corporate Supplies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+        /* HEADER */
+/* 1. Reduce the header padding from 8% to 2% */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 2%; /* Changed 8% to 2% to bring everything to the edges */
+    background: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* 2. Optional: Add a small negative margin to the logo for extreme left alignment */
+.logo {
+    margin-left: -10px; /* Pulls the logo slightly more to the left */
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px; 
+}
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2563eb;
+            white-space: nowrap; /* Prevents text from breaking into two lines */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        nav a { margin-left: 25px; text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: #2563eb; }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url("https://images.unsplash.com/photo-1497366811353-6870744d04b2");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        .hero h1 { font-size: 48px; margin-bottom: 10px; }
+        .hero p { font-size: 18px; margin-bottom: 20px; }
+        .hero button {
+            padding: 14px 30px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .hero button:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+
+        /* PRODUCTS */
+        .products { padding: 100px 10%; background: #f5f7fa; text-align: center; }
+        .products h2 { font-size: 32px; margin-bottom: 40px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .card { background: white; border-radius: 15px; overflow: hidden; transition: 0.4s; cursor: pointer; }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 25px 50px rgba(0,0,0,0.2); }
+        .card h3 { margin: 15px; }
+        .card p { margin: 0 15px 20px; color: #555; font-size: 14px; }
+
+        /* ABOUT */
+        .about { padding: 100px 15%; text-align: center; }
+        .about h2 { font-size: 32px; margin-bottom: 20px; }
+
+        /* CONTACT */
+        .contact { padding: 100px 15%; background: #f5f7fa; text-align: center; }
+        .contact h2 { font-size: 32px; margin-bottom: 30px; }
+        .contact-info { background: white; padding: 40px; border-radius: 15px; max-width: 600px; margin: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .contact-info p { margin: 15px 0; font-size: 16px; color: #333; }
+        .contact-info a { color: #2563eb; text-decoration: none; }
+
+        /* FOOTER */
+        footer { background: #1e3a8a; color: white; text-align: center; padding: 20px; }
+
+        /* Mobile Responsive adjustment */
+        @media (max-width: 768px) {
+            header { flex-direction: column; padding: 15px; }
+            .logo-text { font-size: 18px; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="#home">
+            <img src="logo.png" alt="Universal Corporate Logo">
+            <span class="logo-text">Universal Corporate</span>
+        </a>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div>
+        <h1>Universal Corporate Supplies</h1>
+        <p>Stationery • Housekeeping Machines • Diaries • Corporate Pens</p>
+        <button onclick="document.getElementById('products').scrollIntoView()">
+            Explore Products
+        </button>
+    </div>
+</section>
+
+<section id="products" class="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3" alt="Office Stationery">
+            <h3>Office Stationery</h3>
+            <p>Pens, notebooks, files, and office essentials.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f" alt="Housekeeping Machines">
+            <h3>Housekeeping Machines</h3>
+            <p>Professional cleaning machines for offices.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Corporate Diaries">
+            <h3>Corporate Diaries</h3>
+            <p>Premium planners and professional diaries.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1583484963886-cfe2bff2945f" alt="Premium Pens">
+            <h3>Premium Pens</h3>
+            <p>Luxury corporate writing instruments.</p>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <h2>About Our Company</h2>
+    <p>
+        Universal Corporate Supplies provides premium office stationery, 
+        housekeeping machines, and corporate materials for companies and institutions. 
+        We focus on quality products, professional service, and reliable supply 
+        solutions for the modern workplace.
+    </p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+        <p><strong>Address:</strong><br>
+        111, Bhagwati Vihar, Uttam Nagar,<br>
+        Delhi – 110059</p>
+        
+        <p><strong>Website:</strong><br>
+        <a href="https://www.UniversalCorporate.in" target="_blank">www.UniversalCorporate.in</a></p>
+        
+        <p><strong>Email:</strong><br>
+        info@universalcorporate.in<br>
+        sanjeevkumar@universalcorporate.in</p>
+        
+        <p><strong>Phone:</strong><br>
+        +91 98189-63280</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Universal Corporate Supplies</p>
+</footer>
+
+</body>
+</html>
