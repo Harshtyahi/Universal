@@ -28,35 +28,16 @@
     </nav>
 </header>
 
-<!-- HERO SLIDER -->
 <section id="home" class="hero">
-
-    <div class="slider">
-
-        <div class="slides">
-            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2" class="slide active">
-            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" class="slide">
-            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" class="slide">
-        </div>
-
-        <!-- TEXT -->
-        <div class="hero-content">
-            <h1>Universal Corporate Supplies</h1>
-            <p>Stationery • Housekeeping Machines • Diaries • Corporate Pens</p>
-            <button onclick="document.getElementById('products').scrollIntoView()">
-                Explore Products
-            </button>
-        </div>
-
-        <!-- ARROWS -->
-        <span class="arrow left" onclick="prevSlide()">❮</span>
-        <span class="arrow right" onclick="nextSlide()">❯</span>
-
+    <div>
+        <h1>Universal Corporate Supplies</h1>
+        <p>Stationery • Housekeeping Machines • Diaries • Corporate Pens</p>
+        <button onclick="document.getElementById('products').scrollIntoView()">
+            Explore Products
+        </button>
     </div>
-
 </section>
 
-<!-- PRODUCTS -->
 <section id="products" class="products">
     <h2>Our Products</h2>
 
@@ -87,7 +68,6 @@
     </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="about">
     <h2>About Our Company</h2>
     <p>
@@ -96,7 +76,6 @@
     </p>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact">
     <h2>Contact Us</h2>
 
@@ -119,29 +98,6 @@
 <footer>
     <p>© 2026 Universal Corporate Supplies</p>
 </footer>
-
-<!-- JAVASCRIPT -->
-<script>
-let slides = document.querySelectorAll(".slide");
-let index = 0;
-
-function showSlide(i) {
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[i].classList.add("active");
-}
-
-function nextSlide() {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-}
-
-function prevSlide() {
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
-}
-
-setInterval(nextSlide, 4000);
-</script>
 
 </body>
 </html>
